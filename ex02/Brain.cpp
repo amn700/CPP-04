@@ -2,12 +2,8 @@
 
 Brain::Brain()
 {
-    int i = 0;
-    while (i < 100)
-    {
+    for (int i  = 0; i < 100; i++)
         this->ideas[i] = "default idea";
-        i++;
-    }
     std::cout << "default Brain constructor called!";
     std::cout << std::endl;
 }
@@ -22,12 +18,8 @@ Brain& Brain::operator=(const Brain& obj)
 {
     if (this != &obj)
     {
-        int i = 0;
-        while (i < 100)
-        {
+        for (int i  = 0; i < 100; i++)
             this->ideas[i] = obj.ideas[i];
-            i++;
-        }
         std::cout << "Brain copy asignement operator called!";
         std::cout << std::endl;
     }
@@ -41,12 +33,8 @@ Brain& Brain::operator=(const Brain& obj)
 
 Brain::Brain(const Brain& obj)
 {
-    int i = 0;
-    while (i < 100)
-    {
+    for (int i  = 0; i < 100; i++)
         this->ideas[i] = obj.ideas[i];
-        i++;
-    }
     std::cout << "Brain copy constructor called!";
     std::cout << std::endl;
 }
@@ -54,16 +42,12 @@ Brain::Brain(const Brain& obj)
 std::string Brain::getIdea(int index) const
 {
     if (index >= 0 && index < 100)
-    {
         return ideas[index];
-    }
     return "";
 }
 
 void Brain::setIdea(int index, const std::string& idea)
 {
     if (index >= 0 && index < 100)
-    {
         ideas[index] = idea;
-    }
 }
